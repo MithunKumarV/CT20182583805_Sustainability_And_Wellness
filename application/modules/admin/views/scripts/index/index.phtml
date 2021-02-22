@@ -1,0 +1,103 @@
+<?php
+ $front   = Zend_Controller_Front::getInstance(); 
+ $request  = $front->getRequest();
+ $req_arr = array('controller'=>$request->controller , 'action'=>$request->action, 'module'=>$request->module);
+
+ #Getting Objects
+ $commonobj = new Default_Models_Common();
+ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Employee Wellness Care</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="<?php echo $this->httphost; ?>html/assets_web/css/bootstrap.min.css">
+     <link rel="stylesheet" href="<?php echo $this->httphost; ?>html/assets_web/css/font-awesome.min.css">
+     <link rel="stylesheet" href="<?php echo $this->httphost; ?>html/assets_web/css/animate.css">
+     <link rel="stylesheet" href="<?php echo $this->httphost; ?>html/assets_web/css/owl.carousel.css">
+     <link rel="stylesheet" href="<?php echo $this->httphost; ?>html/assets_web/css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="<?php echo $this->httphost; ?>html/assets_web/css/tooplate-style.css">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>    
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                         <div class="owl-carousel owl-theme">
+                              <div class="item item-first">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Let's make your life happier</h3>
+                                             <h1>Employee Wellness Care</h1>
+                                             <a href="<?php echo $this->httphost; ?>register/index" class="section-btn btn btn-default smoothScroll">Register</a>
+                                             <a href="<?php echo $this->httphost; ?>auth/index" class="section-btn btn btn-default smoothScroll">Login</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+               </div>
+          </div>
+     </section>
+
+ <!-- ABOUT -->
+     <section id="about" style="display:none;">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Welcome to Your <i class="fa fa-h-square"></i>ealth Center</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s" style="text-align: justify;">
+                                   <p> <b>>></b> The art of medicine consists of amusing the patient while nature cures the disease.</p>
+                                   <p> <b>>></b> A medicine cat has no time for doubt. Put your energy into today and stop worrying about the past.</p>
+                                   <p> <b>>></b> If you want something you’ve never had, you must be willing to do something you’ve never done</p>
+                                   <p> <b>>></b> The difference between the impossible and the possible lies in a person’s determination</p>
+                                   <p> <b>>></b> When it comes to eating right and exercising, there is no ‘I’ll start tomorrow. Tomorrow is disease.</p>
+                                   <p> <b>>></b> Those who think they have not time for bodily exercise will sooner or later have to find time for illness.</p>
+                                   <p> <b>>></b> It is better to make many small steps in the right direction than to make a great leap forward only to stumble backward.</p>
+                                   <p> <b>>></b> The only disease you have is your inability to see you have the power to heal yourself</p>
+                                   <p> <b>>></b> A man’s health can be judged by which he takes two at a time – pills or stairs</p>
+                                   <p> <b>>></b> The secret to living well and longer is this: eat half, walk double, laugh triple, and love without measure.</p>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+
+     <!-- SCRIPTS -->
+     <script src="<?php echo $this->httphost; ?>html/assets_web/js/jquery.js"></script>
+     <script src="<?php echo $this->httphost; ?>html/assets_web/js/bootstrap.min.js"></script>
+     <script src="<?php echo $this->httphost; ?>html/assets_web/js/jquery.sticky.js"></script>
+     <script src="<?php echo $this->httphost; ?>html/assets_web/js/jquery.stellar.min.js"></script>
+     <script src="<?php echo $this->httphost; ?>html/assets_web/js/wow.min.js"></script>
+     <script src="<?php echo $this->httphost; ?>html/assets_web/js/smoothscroll.js"></script>
+     <script src="<?php echo $this->httphost; ?>html/assets_web/js/owl.carousel.min.js"></script>
+     <script src="<?php echo $this->httphost; ?>html/assets_web/js/custom.js"></script>
+
+</body>
+</html>

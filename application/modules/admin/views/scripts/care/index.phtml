@@ -1,0 +1,135 @@
+ <?php 
+ $wellnessinfo = $this->wellnessinfo;
+  $employeesinfo = $this->employeesinfo[0];
+ ?>
+ <style>
+.error{
+	color:red; 
+}
+textarea{
+	border-radius: 0px;
+}
+.customvalue{
+	padding-top: 7px;
+	padding-left: 15px;	
+}
+.custmbold {
+	font-weight: bold;	
+}
+</style>
+<div class="row">
+   <div class="col-xs-12">
+      <div class="row">
+         <div class="col-xs-12">
+            <h3 class="header smaller lighter blue"><?php echo $this->translate('Employee Status');?></h3>
+			<form action="" method="POST" name="usersform" class="form-horizontal" id="usersform">
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right"> Employee ID : </label>
+				  <div class="col-sm-4 customvalue"><?php echo str_pad($employeesinfo->uid, 5, 0, STR_PAD_LEFT); ?></div>
+			    </div>	
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right"> Employee Name : </label>
+				  <div class="col-sm-4 customvalue"><?php echo ucfirst($employeesinfo->firstname).' '.$employeesinfo->lastname; if($employeesinfo->gender == 1) echo " (Male)"; else echo " (Female)"; ?></div>
+			    </div>					
+				<div class="form-group">
+				  <label class="col-sm-3 control-label  custmbold no-padding-right">Primary Contact : </label>
+				  <div class="col-sm-4 customvalue"><?php echo $employeesinfo->mobile.' / '.$employeesinfo->email; ?></div>
+			    </div>					
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right">Aadhar : </label>
+				  <div class="col-sm-4 customvalue"><?php echo $employeesinfo->aadhar; ?></div>
+			    </div>						
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right">Address : </label>
+				  <div class="col-sm-4 customvalue"><?php echo $employeesinfo->address.', '.$employeesinfo->city.', '.$employeesinfo->country.', '.$employeesinfo->zipcode.'. '; ?></div>
+			    </div>				
+				<div class="form-group">
+				  <label class="col-sm-3 control-label  custmbold no-padding-right">Other Contact : </label>
+				  <div class="col-sm-4 customvalue"><?php echo $employeesinfo->otmobile.' / '.$employeesinfo->otemail; ?></div>
+			    </div>								
+				<div class="form-group">
+				  <div class="col-sm-12"><hr></div>
+			    </div>	
+						
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right">Body Temperature : </label>
+				  <div class="col-sm-4 customvalue">
+					<b id="bodytemp"><?php echo $wellnessinfo['bodytemp']; ?></b>
+				  </div>
+			    </div>		
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right">Blood Pressure : </label>
+				  <div class="col-sm-4 customvalue">
+						<b id="bp1"><?php echo $wellnessinfo['bp1']; ?></b>
+				  </div>
+			    </div>		
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right">Glucose : </label>
+				  <div class="col-sm-4 customvalue">
+						<b id="Glucose"><?php echo $wellnessinfo['Glucose']; ?></b>
+				  </div>
+			    </div>		
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right">Heart Rate : </label>
+				  <div class="col-sm-4 customvalue">
+					<b id="hartrate"><?php echo $wellnessinfo['hartrate']; ?></b>
+				  </div>
+			    </div>			
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right">Oxygen Saturation : </label>
+				  <div class="col-sm-4 customvalue">
+						<b id="oxygen"><?php echo $wellnessinfo['oxygen']; ?></b>
+				  </div>
+			    </div>			
+				<div class="form-group">
+				  <label class="col-sm-3 control-label custmbold no-padding-right">Asthma : </label>
+				  <div class="col-sm-4 customvalue">
+						<b id="Asthma"><?php echo $wellnessinfo['Asthma']; ?></b>
+				  </div>
+			    </div>
+				<div class="form-group">
+				  <div class="col-sm-12"><hr></div>
+			    </div>
+				<div class="form-group" >
+					<div class="col-sm-12" style="text-align: center;">
+						<a href="<?php echo $this->httphost; ?>index/logout"><button class="btn btn-danger" type="button" >	Logout</button></a>
+					</div>
+				</div>				
+			</form>	
+         </div>
+      </div>
+   </div>
+</div>
+<script>
+setTimeout(function(){ updatecarestatus(); }, 30000);
+var updatecarestatus = function(){
+						var formData = new FormData();		
+						 $.ajax({
+								url: '<?php echo $this->httphost?>care/status',
+								type: 'POST',
+								data: formData,
+								async: true,
+								processData: false,
+								contentType: false,
+								beforeSend: function() {
+									$('#fullloading').show();
+								},
+								success: function(resdata){
+									$('#fullloading').hide();
+									var response =  JSON.parse(resdata);
+									if(typeof response =='object') {
+										$('#bodytemp').html(response.bodytemp);
+										$('#bp1').html(response.bp1);
+										$('#Glucose').html(response.Glucose);
+										$('#hartrate').html(response.hartrate);
+										$('#oxygen').html(response.oxygen);
+										$('#Asthma').html(response.Asthma);
+									}
+								},
+								error: function(){
+									$('#fullloading').hide();
+								}                                                                     
+							});
+							setTimeout(function(){ updatecarestatus(); }, 30000);
+					}
+</script>

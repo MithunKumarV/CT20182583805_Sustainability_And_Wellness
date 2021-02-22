@@ -1,0 +1,92 @@
+<style>
+   .account-container {
+   background: #f9f9f9 none repeat scroll 0 0;
+   border: 1px solid #d5d5d5;
+   border-radius: 5px;
+   box-shadow: 0 0 2px #dadada, 0 -3px 0 #e6e6e6 inset;
+   display: block;
+   margin: 60px auto 0;
+   width: 380px;
+   }
+   .content {
+   padding: 16px 28px 23px;
+   }
+   .clearfix::before, .clearfix::after {
+   content: "";
+   display: table;
+   }
+   .clearfix::after {
+   clear: both;
+   }
+   .login-actions {
+   float: left;
+   margin-bottom: 1.25em;
+   margin-top: -1em;
+   width: 100%;
+   }
+   .login-fields .field {
+   margin-bottom: 1.25em;
+   }
+   .login-fields input {
+   background-color: #fdfdfd;
+   box-shadow: 2px 2px 4px #f1f1f1 inset;
+   color: #8e8d8d;
+   display: block;
+   font-family: "Open Sans";
+   font-size: 13px;
+   margin: 0;
+   padding: 11px 15px 10px 15px;
+   width: 300px;
+   }
+   .login-actions {
+   float: left;
+   margin-bottom: 1.25em;
+   margin-top: -1em;
+   width: 100%;
+   }
+   .error{
+   color: red;
+   }
+   .success{
+   color: green;
+   font-size: 16px;
+font-weight: bold;
+   }
+</style>
+<div class="account-container">
+   <div class="content clearfix" align="center">
+      <h1>Sign In</h1>
+      <form action="" id="userloginform" name="userloginform" method="post">
+         <div class="login-fields">
+            <p>Please provide the login details</p>
+            <div class="field">
+               <?=$this->form->useremail ?>
+            </div>
+            <!-- /field -->
+            <div class="field">
+               <?=$this->form->password ?>
+            </div>
+            <!-- /password -->
+         </div>
+         <!-- /login-fields -->
+         <?php if(isset($this->errormessage) && $this->errormessage != "") : ?>
+         <span class="error"><?php echo $this->errormessage;?></span>
+         <br><br>
+         <?php endif;?>
+         <?php if(isset($this->msg) && $this->msg != "") : ?>
+         <span class="success">Your Registration Successfull and login details sent to given email.</span>
+         <br><br>
+         <?php endif;?>
+         <div class="login-actions">
+            <button class="width-35  btn btn-sm btn-primary" type="submit">
+            <i class="ace-icon fa fa-key"></i>
+            <span class="bigger-110">Login</span>
+            </button>&nbsp;&nbsp;&nbsp;<a href="<?php echo $this->httphost; ?>index/index" style="font-size: 17px;font-weight: bold;"><b>Home</b></a>
+            </button>
+         </div>
+         <!-- .actions -->
+      </form>
+   </div>
+   <!-- /content -->
+</div>
+<!-- /account-container -->

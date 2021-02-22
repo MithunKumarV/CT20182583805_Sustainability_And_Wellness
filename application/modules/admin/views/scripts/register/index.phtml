@@ -1,0 +1,123 @@
+<style>
+.error{
+	color:red; 
+}
+textarea{
+	border-radius: 0px;
+}
+.custmbold {
+	font-weight: bold;	
+}
+</style>
+<div class="row">
+   <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="row">
+         <div class="col-xs-12">
+            <h3 class="header smaller lighter blue" style="font-size: 28px;font-weight: bold;text-align: center;">Employee Registration</h3>
+            <?php if($this->errormsg) { ?>
+			<div class="alert alert-danger">
+				<strong><?php echo $this->errormsg; ?></strong>  
+			</div>
+			<?php } ?>
+			<form action="" method="POST" name="usersform" class="form-horizontal" id="usersform">
+				<div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Firstname : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->firstname;?>
+				  </div>
+			   </div>	
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Lastname :  </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->lastname;?>
+				  </div>
+			   </div>		
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Aadhar  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->aadhar;?><span style="padding-top:-3px;"><strong>eg: Must be 12 digit</strong>
+				  </div>
+			   </div>			
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Email  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->email;?><span style="padding-top:-3px;"><strong>eg: xyz@gmail.com</strong>
+				  </div>
+			   </div>				
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Mobile  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->mobile;?><span style="padding-top:-3px;"><strong>eg: Must be 10 digit</strong>
+				  </div>
+			   </div>					
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Address  : </label>
+				  <div class="col-sm-9">
+						<?php echo $this->form->address;?>
+						<?php echo $this->form->city;?>
+						<?php echo $this->form->country;?>
+						<?php echo $this->form->zipcode;?>
+				  </div>
+			   </div>						
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Gender  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->gender;?>
+				  </div>
+			   </div>						
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Date of birth  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->dob;?><span style="padding-top:-3px;"><strong>eg: YYYY-MM-DD</strong>
+				  </div>
+			   </div>						
+			   <div class="form-group hide">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Status  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->status;?>
+				  </div>
+			   </div>							
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Other Email  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->otemail;?>
+				  </div>
+			   </div>							
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Other Mobile  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->otmobile;?>
+				  </div>
+			   </div>								
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right custmbold"> Bloodgroup  : </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->bloodgroup;?>
+				  </div>
+			   </div>	
+				<div class="form-group" id="formsubmit">
+					<label class="col-sm-3 control-label no-padding-right" for="save"> </label>
+					<div class="col-sm-9">
+						<a href="<?php echo $this->httphost; ?>index/index">
+							<button class="btn btn-danger" type="button" >Cancel</button>
+						</a>
+						<button class="btn btn-primary" type="submit">Register</button>
+					</div>
+				</div>				
+			</form>	
+         </div>
+      </div>
+   </div>
+</div>
+<script>
+	$( document ).ready(function() {
+		$( ".dobdatepicker" ).datepicker({
+			format: 'yyyy-mm-dd',
+			showOtherMonths: true,
+			selectOtherMonths: false,
+			autoclose: 'true',
+			endDate: '+0d',
+		});
+	});
+</script>

@@ -1,0 +1,143 @@
+<style>
+.error{
+	color:red; 
+}
+textarea{
+	border-radius: 0px;
+}
+</style>
+<div class="row">
+   <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="row">
+         <div class="col-xs-12">
+            <h3 class="header smaller lighter blue"><?php echo $this->translate('Update Employee');?></h3>
+            <?php if($this->errormsg) { ?>
+			<div class="alert alert-danger">
+				<strong><?php echo $this->errormsg; ?></strong>  
+			</div>
+			<?php } ?>
+			<form action="" method="POST" name="usersform" class="form-horizontal" id="usersform">
+				<div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Firstname</label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->firstname;?>
+						<?php echo $this->form->uid;?>
+				  </div>
+			   </div>	
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Lastname </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->lastname;?>
+				  </div>
+			   </div>		
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Aadhar </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->aadhar;?><span style="padding-top:-3px;"><strong>eg: Must be 12 digit</strong>
+				  </div>
+			   </div>			
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Email </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->email;?><span style="padding-top:-3px;"><strong>eg: xyz@gmail.com</strong>
+				  </div>
+			   </div>				
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Mobile </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->mobile;?><span style="padding-top:-3px;"><strong>eg: Must be 10 digit</strong>
+				  </div>
+			   </div>					
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Address </label>
+				  <div class="col-sm-9">
+						<?php echo $this->form->address;?>
+						<?php echo $this->form->city;?>
+						<?php echo $this->form->country;?>
+						<?php echo $this->form->zipcode;?>
+				  </div>
+			   </div>						
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Gender </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->gender;?>
+				  </div>
+			   </div>						
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Date of birth </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->dob;?><span style="padding-top:-3px;"><strong>eg: YYYY-MM-DD</strong>
+				  </div>
+			   </div>						
+			   <div class="form-group hide">
+				  <label class="col-sm-3 control-label no-padding-right"> Status </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->status;?>
+				  </div>
+			   </div>							
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Other Email </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->otemail;?>
+				  </div>
+			   </div>								
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Other Mobile </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->otmobile;?>
+				  </div>
+			   </div>								
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Bloodgroup </label>
+				  <div class="col-sm-4">
+						<?php echo $this->form->bloodgroup;?>
+				  </div>
+			   </div>	
+				<div class="form-group" id="formsubmit">
+					<label class="col-sm-3 control-label no-padding-right" for="save"> </label>
+					<div class="col-sm-9">
+						<a href="<?php echo $this->httphost; ?>employees/index"><button class="btn btn-danger" type="button" >
+							<i class="ace-icon fa fa-times bigger-125"></i>
+							Cancel
+						</button></a>
+						<button class="btn btn-primary" type="submit">
+							<i class="ace-icon fa fa-floppy-o bigger-125"></i>
+							Save
+						</button>
+					</div>
+				</div>				
+			</form>	
+         </div>
+      </div>
+   </div>
+</div>
+<script>
+	$(document).ready(function() {
+		$('#uid').val('<?php echo $this->row->uid;?>');
+		$('#firstname').val('<?php echo $this->row->firstname;?>');
+		$('#lastname').val('<?php echo $this->row->lastname;?>');
+		$('#aadhar').val('<?php echo $this->row->aadhar;?>');
+		$('#email').val('<?php echo $this->row->email;?>');
+		$('#mobile').val('<?php echo $this->row->mobile;?>');
+		$('#address').val('<?php echo $this->row->address;?>');
+		$('#city').val('<?php echo $this->row->city;?>');
+		$('#country').val('<?php echo $this->row->country;?>');
+		$('#zipcode').val('<?php echo $this->row->zipcode;?>');
+		$('#gender').val('<?php echo $this->row->gender;?>');
+		$('#dob').val('<?php echo $this->row->dob;?>');
+		$('#status').val('<?php echo $this->row->status;?>');
+		$('#otemail').val('<?php echo $this->row->otemail;?>');
+		$('#otmobile').val('<?php echo $this->row->otmobile;?>');
+		$('#bloodgroup').val('<?php echo $this->row->bloodgroup;?>');
+		
+		$( ".dobdatepicker" ).datepicker({
+			format: 'yyyy-mm-dd',
+			showOtherMonths: true,
+			selectOtherMonths: false,
+			autoclose: 'true',
+			endDate: '+0d',
+		});
+		
+	});
+</script>

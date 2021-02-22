@@ -1,0 +1,53 @@
+<?php
+	$info = $this->info;
+?>
+<style>
+.error{
+	color:red; 
+}
+textarea{
+	border-radius: 0px;
+}
+</style>
+<div class="row">
+   <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="row">
+         <div class="col-xs-12">
+            <h3 class="header smaller lighter blue"><strong>Upload File</strong></h3>
+            <?php if($this->errormsg) { ?>
+			<div class="alert alert-danger">
+				<strong><?php echo $this->errormsg; ?></strong>  
+			</div>
+			<?php } ?>
+				<form action="" method="POST" name="categoryform" class="form-horizontal" id="categoryform"  enctype="multipart/form-data">
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Upload File </label>
+				  <div class="col-sm-4">
+						<input type="file" name="imagepath" id="imagepath" class="form-control" >
+				  </div>
+			   </div>
+			   <div class="form-group">
+				  <label class="col-sm-3 control-label no-padding-right"> Description </label>
+				  <div class="col-sm-4">
+						<textarea name="content" id="content" class="form-control" placeholder="content" ><?php if(isset($info['content'])) echo nl2br($info['content']); ?></textarea>
+				  </div>
+			   </div>	
+				<div class="form-group" id="formsubmit">
+					<label class="col-sm-3 control-label no-padding-right" for="save"> </label>
+					<div class="col-sm-9">
+						<button class="btn btn-primary" type="submit">
+							<i class="ace-icon fa fa-floppy-o bigger-125"></i>
+							Save
+						</button>
+						<a href="<?php echo $this->httphost; ?>employees/index"><button class="btn btn-danger scshowfullloading" type="button" >
+							<i class="ace-icon fa fa-times bigger-125"></i>
+							Cancel
+						</button></a>
+					</div>
+				</div>				
+			</form>
+         </div>
+      </div>
+   </div>
+</div>
