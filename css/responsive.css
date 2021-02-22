@@ -1,0 +1,170 @@
+@media (max-width: 48em) {
+  .container-fluid .deals .leftdrop:before {
+      font-size: 0px;
+}
+.sortedRevel .show>.dropdown-menu{
+  width: 100%
+}
+.container-fluid .deals .dropdown-menu:before {
+    left: 6px;
+}
+.container-fluid .deals .dropdown-menu-right{
+  left: 0;
+      width: 239px;
+}
+
+  .container-fluid .leftAccord .dropdown-toggle {
+    width: 100%;
+  }
+  .res-marT{
+    margin-top:15px !important
+  }
+  .container-fluid .accordCard #collapseOne .card {
+
+    margin-bottom: 1rem;
+  }
+  .container-fluid .accordCard .cardImg {
+    height: auto;
+  }
+  .container-fluid .widgetCircle p {
+
+    display: block;
+    margin: 12px 50px !important;
+    text-align: right;
+  }
+  .res-algin{
+    text-align: right !important;
+  }
+  .container-fluid .widgetCircle span.breadCircle {
+    top: 1px;
+  }
+  .container-fluid .deals {
+   padding: 28px 20px;
+ }
+ .right-text {
+  margin: 15px 0;
+}
+.res-marB{
+  margin-bottom: 1rem;
+}
+.container-fluid .captialOverBord{
+  margin-right: -15px;
+}
+.res-card{
+  margin-top: 2rem;
+}
+.navbar-light .navbar-toggler {
+  top: 1px;
+}
+.container-fluid .bgCampaigns{
+  height: auto;
+}
+
+div.res-capital{
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  margin: 10px 0;
+}
+.container-fluid .campActive{
+  width: 100%
+}
+.container-fluid .anyTime .dropdown-toggle::after {
+    left: 100px;
+}
+.res-title{
+  text-align: center;
+  margin: 20px 0 0;
+}
+.container-fluid .widgetCircle span.breadGreen2{
+  padding: 2px 5px 1px 5px;
+}
+.container-fluid .widgetCircle p span {
+  left: 14px;
+  bottom: 1px;
+}
+.res-marAuto{
+    margin: 0 auto;
+}
+
+.container-fluid .dealPage img {
+    height: 120px;
+    width: 120px !important;
+}
+.res-center{
+  text-align: center;
+}
+.res-size{
+  font-size: 8px;
+}
+.res-mar{
+  margin-top: 15px !important;
+}
+.res-marB15{
+ margin-bottom: 15px; 
+}
+.container-fluid .imgVideo {
+    display: block;
+}
+.container-fluid .res-width{
+  width: 100%;
+}
+.container-fluid .accordCard .card-block a{
+  width: 100%;
+}
+.container-fluid .aboutInverstor .dropdown-toggle {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+ .res-position{
+    position: initial !important;
+}
+}
+
+
+@media screen and (min-width: 48em) {
+    #priceDetail {       overflow-y: scroll;}
+}
+@media screen and (min-width: 62em) {
+
+  .container-fluid div.inlineBtn button{
+    padding: 8px 5px;
+    font-size: 14px;
+  }
+  .container-fluid .sortedRevel button {
+    font-size: 13px;
+  }
+  .container-fluid button.createAdd {
+
+    width: 140px;
+  }
+  .resMatcher{
+    margin-top: 3.2rem !important;
+  }
+
+  .container-fluid div.bgCampaigns{
+    height: 30rem;
+  }
+
+
+  .card-block {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 1rem;
+  }
+  .container-fluid .accordCard .card-block a {
+    padding: 0.35rem 1rem;
+    left: 2rem;
+    margin-top: 1rem;
+  } 
+  .table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    font-size: 14px;
+  } 
+  .container-fluid .accordCard .cardText .btn {
+    color: #fff;
+
+    width: 100%;
+  }
+}
